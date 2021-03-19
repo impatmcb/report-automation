@@ -1,4 +1,4 @@
-# report-automation
+# Report Automation
 Machine-level automation for various reports
 
 This repository holds the scripts used for various reports. Current scripts include:
