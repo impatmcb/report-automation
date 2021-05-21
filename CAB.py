@@ -66,8 +66,8 @@ thisReport = df[targetDate]
 thisReport = thisReport[['Change Coordinator', 'Owned By', 'Change ID', 'Proposed Start Date', 'Proposed End Date',
                          'Title', 'Change Coordinator Team']]
 thisReport.columns = ['Coordinator', 'Manager', 'Change', 'Start', 'End', 'Title', 'Team']
-#thisReport['Start'] = pd.to_datetime(thisReport['Start'], format='%m/%d/%Y %I:%M %p').dt.strftime('%m/%d/%Y %H:%M')
-#thisReport['End'] = pd.to_datetime(thisReport['End'], format='%m/%d/%Y %I:%M %p').dt.strftime('%m/%d/%Y %H:%M')
+thisReport['Start'] = pd.to_datetime(thisReport['Start']).dt.strftime('%m/%d/%Y %H:%M')
+thisReport['End'] = pd.to_datetime(thisReport['End']).dt.strftime('%m/%d/%Y %H:%M')
 thisReport = thisReport.sort_values(by='Start')
 
 # Create new XLSX file and write data frame to it
